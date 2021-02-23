@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>動態牆</title>
+  <!-- 取消一些預設 -->
+  <link rel="stylesheet" href="vendors/css/ResetCSS.css">
+  <link rel="stylesheet" href="vendors/jquery/bootstrap/css/bootstrap.min.css">
+  <!-- 取消rwd -->
+  <link rel="stylesheet" href="vendors/bootstrap-nonresponsive.css">
+  <link rel="stylesheet" href="vendors/css/timeline2.css">
+
+</head>
+
+<body>
+  <!-- 橘色條 -->
+  <div class="  just_a_row col-md-12"></div>
+  <!-- 導覽列 ============================================================================= -->
+  <header>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <a class="navbar-brand" href="#"><img src="./images/logo_demo_ver2.png" alt="Logo" class="logo_img"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav2" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav2">
+        <!-- 左側選單 -->
+        <ul class="mx-auto navbar-nav nav_left">
+          <li class="mr-sm-3 nav-item">
+            <a class="nav-link" href="#">會員中心</a>
+          </li>
+          <li class="mr-sm-3 nav-item">
+            <a class="nav-link" href="#">一起散步吧</a>
+          </li>
+          <li class="mr-sm-3 nav-item">
+            <a class="nav-link" href="#">Q&A</a>
+          </li>
+          <li class="mr-sm-3 nav-item">
+            <a class="nav-link" href="#">Shopping</a>
+          </li>
+          <li class="mr-sm-3 nav-item">
+            <a class="nav-link" href="#">每日抽卡</a>
+          </li>
+        </ul>
+
+        <!-- 使用者頭像 -->
+        <a class="mr-sm-4 nav-brand nav_personal" href="#" style="text-decoration: none;">
+          <img src="./images/personal_img_demo.jpg" class="rounded-circle nav_personal_img">
+          <span class="personal_span">用戶名</span>
+        </a>
+
+        <!-- 右側選單 -->
+        <div class="dropdown" style="margin-right:200px">
+          <a href="#" id="imageDropdown" data-toggle="dropdown">
+            <img src="images/burger_menu.jpg" style="height:30px">
+          </a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="imageDropdown">
+            <li><a class="dropdown-item" role="menuitem" href="#">item 1</a></li>
+            <li><a class="dropdown-item" role="menuitem" href="#">item 2</a></li>
+            <li><a class="dropdown-item" role="menuitem" href="#">item 3</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+    </nav>
+  </header>
+
+  <!-- 廣告欄 ============================================================================= -->
+  <!-- 輪播開始 -->
+  <!-- 多個輪播 id不可重複 data-interval="3000" 3秒換一次-->
+  <div id="carousel" class="carousel slide container col-md-10 " data-ride="carousel" data-interval="3000" wrap="true">
+    <ol class="carousel-indicators">
+      <!-- class要有一個 +active 當第一張 -->
+      <li data-target="#carousel" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel" data-slide-to="1"></li>
+      <li data-target="#carousel" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://static.runoob.com/images/mix/img_fjords_wide.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://static.runoob.com/images/mix/img_nature_wide.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://static.runoob.com/images/mix/img_mountains_wide.jpg" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <!-- 往前翻 -->
+    <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <!-- 往後翻 -->
+    <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  <!-- 輪播結束 -->
+
+  <div class="container col-md-10">
+
+    <div class="row">
+      <!-- 貼文 ============================================================================= -->
+      <div class="col-md-8">
+
+        <!-- post1 -->
+        <div class="post_main">
+          <div class="card post_card">
+
+            <div class="card-header">
+
+              <div class="row">
+                <div class="col-md-1">
+                  <img class="rounded-circle" width="45" src="https://picsum.photos/50/50" alt="">
+                </div>
+                <div class="col-md-3">
+
+                  <a class="h5" href="#">小吳</a>
+                  <div class="h7 text-muted">2021/01/05 13:45</div>
+                </div>
+                <div class="col-md-1 ml-auto">
+                  <button class="btn btn_star" type="button" name="button"><img class="star" src="images/black-star.png" alt=""></button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-body">
+
+              <div id="d1" class="carousel slide" data-ride="carousel" data-interval="false">
+                <!-- 指示符 -->
+                <ul class="carousel-indicators">
+                  <li data-target="#d1" data-slide-to="0" class="active"></li>
+                  <li data-target="#d1" data-slide-to="1"></li>
+                  <li data-target="#d1" data-slide-to="2"></li>
+                </ul>
+
+                <!-- 輪播圖片 -->
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="https://static.runoob.com/images/mix/img_fjords_wide.jpg">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://static.runoob.com/images/mix/img_nature_wide.jpg">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://static.runoob.com/images/mix/img_mountains_wide.jpg">
+                  </div>
+                </div>
+
+                <!-- 左右切换按钮 -->
+                <a class="carousel-control-prev" href="#d1" data-slide="prev">
+                  <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#d1" data-slide="next">
+                  <span class="carousel-control-next-icon"></span>
+                </a>
+              </div>
+
+              <div class="btn_bar">
+                <button class="btn_like btn" type="button" name="button"> <img class="heart" src="images/black_heart.png" alt=""> 按讚</button>
+                <button class="btn_comment btn" type="button" name="button"> <img class="heart" src="images/comment.png" alt=""> 留言</button>
+                <button class="btn_share btn" type="button" name="button"> <img class="heart" src="images/share.png" alt=""> 分享</button>
+                <button class="btn_comment_length btn float-right" type="button" name="button"></button>
+
+              </div>
+              <div>
+                <span class="like_count" value='25'>25個讚</span>
+              </div>
+              <div class=" form-inline comment">
+                <p class="card-text">
+                  <a href="#" class="poster_name">小吳</a>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo recusandae nulla rem eos ipsa praesentium
+                  esse magnam nemo dolor
+                  sequi fuga quia quaerat cum, obcaecati hic, molestias minima iste voluptates.
+                </p>
+              </div>
+              <div class="text-muted h7 mb-2">10 min ago</div>
+              <ul class="leave_comments_list">
+                <li>
+                  <div class=" row comment">
+                    <p class="card-text col-md-11"> <a href="#" class="poster_name">大吳 </a>Lorem itrud exercectetur adipisicing elit. Quo recusandae nulla rem eos ipsa praesentium
+                      esse magnam nemo dolor
+                      sequi fuga quia quaerat cum, obtation ullamco laboris nisi ut aliquip ex ea commodo consequat. Dugi est laborum.</p>
+                    <button class="comment_like btn col-md-1" type="button" name="button"> <img class="heart" src="images/black_heart.png" alt=""> </button>
+                  </div>
+
+                </li>
+                <li>
+                  <div class=" row comment">
+                    <p class="card-text col-md-11"> <a href="#" class="poster_name">ken </a>
+                      放棄</p>
+                    <button class="comment_like btn col-md-1" type="button" name="button"> <img class="heart" src="images/black_heart.png" alt=""> </button>
+
+                  </div>
+                </li>
+                <li>
+                  <div class=" row comment">
+                    <p class="card-text col-md-11"> <a href="#" class="poster_name">godgwawa</a>
+                      no</p>
+                    <button class="comment_like btn col-md-1" type="button" name="button"> <img class="heart" src="images/black_heart.png" alt=""> </button>
+                  </div>
+
+                </li>
+              </ul>
+
+
+
+              <div class="form-inline">
+
+                <img class="rounded-circle leave_comments_img" width="45" src="https://picsum.photos/50/50">
+                <input class="leave_comments" type="hidden" placeholder="留言">
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+        <!-- post2 -->
+        <div class="post_main">
+          <div class="card post_card">
+
+            <div class="card-header">
+
+              <div class="row">
+                <div class="col-md-1">
+                  <img class="rounded-circle" width="45" src="https://picsum.photos/50/50" alt="">
+                </div>
+                <div class="col-md-3">
+
+                  <a class="h5" href="#">小吳</a>
+                  <div class="h7 text-muted">2021/01/05 13:45</div>
+                </div>
+                <div class="col-md-1 ml-auto">
+                  <button class="btn btn_star" type="button" name="button"><img class="star" src="images/black-star.png" alt=""></button>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="card-body">
+
+              <!-- <img class="post_img" src="images/image-09.jpg" alt=""> -->
+              <div id="d2" class="carousel slide" data-ride="carousel" data-interval="false">
+                <!-- 指示符 -->
+                <ul class="carousel-indicators">
+                  <li data-target="#d2" data-slide-to="0" class="active"></li>
+                  <li data-target="#d2" data-slide-to="1"></li>
+                  <li data-target="#d2" data-slide-to="2"></li>
+                </ul>
+
+                <!-- 轮播图片 -->
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="https://static.runoob.com/images/mix/img_fjords_wide.jpg">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://static.runoob.com/images/mix/img_nature_wide.jpg">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://static.runoob.com/images/mix/img_mountains_wide.jpg">
+                  </div>
+                </div>
+
+                <!-- 左右切换按钮 -->
+                <a class="carousel-control-prev" href="#d2" data-slide="prev">
+                  <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#d2" data-slide="next">
+                  <span class="carousel-control-next-icon"></span>
+                </a>
+              </div>
+              <div class="btn_bar">
+                <button class="btn_like btn" type="button" name="button"> <img class="heart" src="images/black_heart.png" alt=""> 按讚</button>
+                <button class="btn_comment btn" type="button" name="button"> <img class="heart" src="images/comment.png" alt=""> 留言</button>
+                <button class="btn_share btn" type="button" name="button"> <img class="heart" src="images/share.png" alt=""> 分享</button>
+                <button class="btn_comment_length btn float-right" type="button" name="button"></button>
+
+              </div>
+              <div>
+                <span class="like_count" value='10'>10個讚</span>
+              </div>
+              <div class=" form-inline comment">
+                <p class="card-text">
+                  <a href="#" class="poster_name">小吳</a>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo recusandae nulla rem eos ipsa praesentium
+                  esse magnam nemo dolor
+                  sequi fuga quia quaerat cum, obcaecati hic, molestias minima iste voluptates.
+                </p>
+              </div>
+              <div class="text-muted h7 mb-2">10 min ago</div>
+              <ul class="leave_comments_list">
+                <li>
+                  <div class=" row comment">
+                    <p class="card-text col-md-11"> <a href="#" class="poster_name">ken </a>
+                      放棄</p>
+                    <button class="comment_like btn col-md-1" type="button" name="button"> <img class="heart" src="images/black_heart.png" alt=""> </button>
+
+                  </div>
+                </li>
+                <li>
+                  <div class=" row comment">
+                    <p class="card-text col-md-11"> <a href="#" class="poster_name">godgwawa</a>
+                      no</p>
+                    <button class="comment_like btn col-md-1" type="button" name="button"> <img class="heart" src="images/black_heart.png" alt=""> </button>
+                  </div>
+
+                </li>
+              </ul>
+              <div class="form-inline">
+                <img class="rounded-circle leave_comments_img" width="45" src="https://picsum.photos/50/50">
+                <input class="leave_comments" type="hidden" placeholder="留言">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 貼文 ============================================================================= -->
+
+      <div class="col-md-4">
+        <div class="bulletin_board">
+          <div style="border:1px solid; box-sizing: border-box;padding:10px">
+            <h1>衛教</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et d
+              olore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+              commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat n
+              lla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+              in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+        </div>
+        <div class="bulletin_board">
+
+          <div style="border:1px solid; box-sizing: border-box;padding:10px">
+            <h1>領養走失</h1>
+            <p class="pp">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et d
+              olore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+              commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat n
+              lla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+              in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="container col-md-10">
+      <h5>this is footer</h5>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+        aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+    </div>
+  </footer>
+
+  <script src="vendors/jquery/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+  <script src="vendors/js/timeline2.js">
+
+  </script>
+
+</body>
+
+</html>
